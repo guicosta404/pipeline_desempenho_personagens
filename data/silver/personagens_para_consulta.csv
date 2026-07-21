@@ -1,0 +1,18 @@
+nome_personagem_canonico,presente_solicitacoes,presente_vendas,origem_personagem
+Ahsoka Tano,True,False,solicitacoes
+Boba Fett,True,True,solicitacoes_vendas
+C-3PO,True,True,solicitacoes_vendas
+Chewbacca,True,True,solicitacoes_vendas
+Darth Vader,True,True,solicitacoes_vendas
+Din Djarin,True,False,solicitacoes
+Grogu,True,False,solicitacoes
+Han Solo,True,True,solicitacoes_vendas
+Kylo Ren,False,True,vendas
+Lando Calrissian,True,True,solicitacoes_vendas
+Leia Organa,True,True,solicitacoes_vendas
+Luke Skywalker,True,True,solicitacoes_vendas
+Obi-Wan Kenobi,True,True,solicitacoes_vendas
+Palpatine,True,True,solicitacoes_vendas
+R2-D2,True,True,solicitacoes_vendas
+Rey Skywalker,True,False,solicitacoes
+Yoda,True,True,solicitacoes_vendas

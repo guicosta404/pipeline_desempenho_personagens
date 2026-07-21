@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 from src.extracao import ingerir_csv
-from src.transformacao import ler_personagem_bronze, normalizar_personagens, obter_nomes_unicos_api
+from src.transformacao import ler_personagem_bronze, normalizar_personagens, obter_nomes_unicos_api,criar_fila_api,ler_personagem_bronze,ler_vendas_bronze,normalizar_nomes_vendas,normalizar_personagens,obter_nomes_unicos_api,obter_nomes_unicos_vendas
 from src.carga import salvar_df_csv
 
 logging.basicConfig(level=logging.INFO,  format="%(asctime)s - %(levelname)s - %(message)s")
@@ -49,14 +49,46 @@ def executar_normalizacao_personagens() -> list:
 
     nomes_para_api = obter_nomes_unicos_api(df_normalizado)
 
-    logging.info("Personagens que serão consultados:")
-
-    for nome in nomes_para_api:
-        print(f"- {nome}")
-
     return nomes_para_api    
 
-    
+def executar_normalizacao_nomes_vendas() -> list:
+    """
+    Normaliza nomes presentes nas vendas.
+    """
+    caminho_vendas_bronze = (DIRETORIO_BRONZE_CSV / "vendas_produtos.csv")
+
+    df_vendas = ler_vendas_bronze(caminho_vendas_bronze)
+
+    df_vendas_normalizado = normalizar_nomes_vendas(df_vendas)
+
+    caminho_saida = (DIRETORIO_SILVER / "vendas_nomes_normalizados.csv")
+
+    salvar_df_csv(df = df_vendas_normalizado,caminho_destino = caminho_saida)
+
+    nomes_vendas = obter_nomes_unicos_vendas(df_vendas_normalizado)
+
+    return nomes_vendas
+
+def executar_criacao_fila_api(nomes_solicitados:list, nomes_vendas:list) -> list:
+    """
+    Cria e salva a lista única de personagens para consulta na API.
+    """
+    df_fila = criar_fila_api(nomes_solicitados, nomes_vendas)
+
+    caminho_saida = (DIRETORIO_SILVER / "personagens_para_consulta.csv")
+
+    salvar_df_csv(df = df_fila, caminho_destino=caminho_saida)
+
+    nomes_para_consulta = df_fila["nome_personagem_canonico"].tolist()
+
+    logging.info("Pensonagens para consultar na API:")
+    for nome in nomes_para_consulta:
+        print(f"- {nome}")
+
+    return nomes_para_consulta    
+
+
+
 def executar_pipeline() -> None:
     """
     Orquestra as etapas do pipeline.
@@ -68,7 +100,11 @@ def executar_pipeline() -> None:
     executar_ingestao_csv()
 
     logging.info("ETAPA 2: normalização nome dos personagens")
-    executar_normalizacao_personagens()
+    nomes_solicitados = executar_normalizacao_personagens()
+
+    logging.info("ETAPA 3: normalização de nomes das vendas e criação de fila de consulta na SWAPI.")
+    nomes_vendas = executar_normalizacao_nomes_vendas()
+    executar_criacao_fila_api(nomes_solicitados=nomes_solicitados, nomes_vendas=nomes_vendas)
 
     logging.info("Pipeline finalizado com sucesso")
 
