@@ -1,0 +1,18 @@
+nome_personagem_canonico,presente_solicitacoes,presente_vendas,origem_personagem,consultado_swapi,encontrado_swapi,quantidade_resultados_api,nome_retornado_swapi,url_personagem_swapi,status_consulta,resposta_reutilizada,arquivo_bronze
+Ahsoka Tano,True,False,solicitacoes,True,False,0,,,nao_encontrado,True,ahsoka_tano.json
+Boba Fett,True,True,solicitacoes_vendas,True,True,1,Boba Fett,https://swapi.dev/api/people/22/,encontado,True,boba_fett.json
+C-3PO,True,True,solicitacoes_vendas,True,True,1,C-3PO,https://swapi.dev/api/people/2/,encontado,True,c_3po.json
+Chewbacca,True,True,solicitacoes_vendas,True,True,1,Chewbacca,https://swapi.dev/api/people/13/,encontado,True,chewbacca.json
+Darth Vader,True,True,solicitacoes_vendas,True,True,1,Darth Vader,https://swapi.dev/api/people/4/,encontado,True,darth_vader.json
+Din Djarin,True,False,solicitacoes,True,False,0,,,nao_encontrado,True,din_djarin.json
+Grogu,True,False,solicitacoes,True,False,0,,,nao_encontrado,True,grogu.json
+Han Solo,True,True,solicitacoes_vendas,True,True,1,Han Solo,https://swapi.dev/api/people/14/,encontado,True,han_solo.json
+Kylo Ren,False,True,vendas,True,False,0,,,nao_encontrado,True,kylo_ren.json
+Lando Calrissian,True,True,solicitacoes_vendas,True,True,1,Lando Calrissian,https://swapi.dev/api/people/25/,encontado,True,lando_calrissian.json
+Leia Organa,True,True,solicitacoes_vendas,True,True,1,Leia Organa,https://swapi.dev/api/people/5/,encontado,True,leia_organa.json
+Luke Skywalker,True,True,solicitacoes_vendas,True,True,1,Luke Skywalker,https://swapi.dev/api/people/1/,encontado,True,luke_skywalker.json
+Obi-Wan Kenobi,True,True,solicitacoes_vendas,True,True,1,Obi-Wan Kenobi,https://swapi.dev/api/people/10/,encontado,True,obi_wan_kenobi.json
+Palpatine,True,True,solicitacoes_vendas,True,True,1,Palpatine,https://swapi.dev/api/people/21/,encontado,True,palpatine.json
+R2-D2,True,True,solicitacoes_vendas,True,True,1,R2-D2,https://swapi.dev/api/people/3/,encontado,True,r2_d2.json
+Rey Skywalker,True,False,solicitacoes,True,False,0,,,nao_encontrado,True,rey_skywalker.json
+Yoda,True,True,solicitacoes_vendas,True,True,1,Yoda,https://swapi.dev/api/people/20/,encontado,True,yoda.json

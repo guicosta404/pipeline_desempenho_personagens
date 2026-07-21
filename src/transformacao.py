@@ -1,6 +1,7 @@
 import pandas as pd
 import unicodedata
 from pathlib import Path
+import json
 
 import logging
 logger = logging.getLogger(__name__)
@@ -215,3 +216,115 @@ def criar_fila_api(nomes_solicitados: list, nomes_vendas: list) -> pd.DataFrame:
     logger.info("Total de personagens únicos para consulta na API: %s", len(df_consultas))
 
     return df_consultas
+
+def criar_status_consultas_api(df_fila: pd.DataFrame, resultados_ingestao: list[dict]) -> pd.DataFrame:
+    """
+    Interpreta as respostas da Bronze e registra o resultado
+    da consulta de cada personagem.
+    """
+
+    registros_status = []
+
+    for resultado in resultados_ingestao:
+        nome_consultado = resultado["nome_personagem_canonico"]
+
+        erro_consulta = resultado["erro_consulta"]
+        
+        resposta_reutilizada = resultado["resposta_reutilizada"]
+
+        if erro_consulta is not None:
+            registros_status.append({
+                "nome_personagem_canonico": nome_consultado,
+                "consultado_swapi": False,
+                "encontrado_swapi": False,
+                "quantidade_resultados_api": None,
+                "nome_retornado_swapi": None,
+                "url_personagem_swapi": None,
+                "status_consulta": "erro_requisicao",
+                "resposta_reutilizada": False,
+                "arquivo_bronze": None,
+            })
+            continue
+
+        caminho_resposta = Path(resultado["caminho_resposta"])
+
+        try:
+            with caminho_resposta.open(mode="r", encoding="utf-8") as arquivo:
+                dados_resposta = json.load(arquivo)
+
+        except(OSError, json.JSONDecodeError):        
+            registros_status.append({
+                "nome_personagem_canonico": nome_consultado,
+                "consultado_swapi": False,
+                "encontrado_swapi": False,
+                "quantidade_resultados_api": None,
+                "nome_retornado_swapi": None,
+                "url_personagem_swapi": None,
+                "status_consulta": "resposta_invalida",
+                "resposta_reutilizada": resposta_reutilizada,
+                "arquivo_bronze": caminho_resposta.name
+            })
+            continue
+        
+        resultados_api = dados_resposta.get("results",[]) # ????????
+
+        quantidade_resultados = dados_resposta.get("count", len(resultados_api))
+
+        chave_nome_consultado = normalizar_chave_nome(nome_consultado)
+
+        correspondencias_exatas = [
+            personagem
+            for personagem in resultados_api
+            if normalizar_chave_nome( #### ?????????????????????????????????????????
+                personagem.get("name")
+            )
+            == chave_nome_consultado
+        ]
+
+        encontrado = bool(correspondencias_exatas)
+        nome_retornado = None
+        url_personagem = None
+
+        if encontrado:
+            personagem_encontrado = (correspondencias_exatas[0])
+
+            nome_retornado= personagem_encontrado.get("name")
+
+            url_personagem = personagem_encontrado.get("url")
+
+            status_consulta = "encontado"
+
+        elif quantidade_resultados == 0:
+            nome_retornado = None
+            url_retornado = None 
+            status_consulta = "nao_encontrado"
+
+        else:
+            nome_retornado = None
+            url_personagem = None
+            status_consulta = "sem_correspondencia_exata"
+
+        registros_status.append(
+            {
+                "nome_personagem_canonico": nome_consultado,
+                "consultado_swapi": True,
+                "encontrado_swapi": encontrado,
+                "quantidade_resultados_api": quantidade_resultados,
+                "nome_retornado_swapi": nome_retornado,
+                "url_personagem_swapi": url_personagem,
+                "status_consulta": status_consulta,
+                "resposta_reutilizada": resposta_reutilizada,
+                "arquivo_bronze": caminho_resposta.name,
+            }
+        )  
+
+    df_status = pd.DataFrame(registros_status)
+
+    df_resultado = df_fila.merge(df_status, on="nome_personagem_canonico", how="left", validate="one_to_one") # Se houver uma duplicidade inesperada,
+                                                                                                                  # o pipeline gera um erro  em vez de fazer o cruzamento
+
+    logger.info("Personagens encontrados na SWAPI: %s", df_resultado["encontrado_swapi"].sum())
+
+    logger.info("Personagens não encontrados na SWAPI: %s",(df_resultado["status_consulta"]== "nao_encontrado").sum())
+
+    return df_resultado

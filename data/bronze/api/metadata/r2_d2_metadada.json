@@ -1,0 +1,8 @@
+{
+    "nome_consultado": "R2-D2",
+    "fonte": "https://swapi.dev/api/people/",
+    "data_hora_ingestao": "2026-07-21T21:00:56.771341+00:00",
+    "status_http": 200,
+    "content_type": "application/json",
+    "status_ingestao": "sucesso"
+}

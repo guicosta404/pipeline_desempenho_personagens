@@ -1,0 +1,8 @@
+{
+    "nome_consultado": "Grogu",
+    "fonte": "https://swapi.dev/api/people/",
+    "data_hora_ingestao": "2026-07-21T21:00:53.053059+00:00",
+    "status_http": 200,
+    "content_type": "application/json",
+    "status_ingestao": "sucesso"
+}
