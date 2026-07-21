@@ -1,0 +1,33 @@
+id,nome_personagem,solicitado_por,prioridade,observacao,nome_personagem_original,nome_chave_original,nome_chave,nome_personagem_canonico,nome_valido
+1,Boba Fett,Márcia Nuñez,1,confirmar com o cliente,Boba Fett,boba fett,boba fett,Boba Fett,True
+2,Han Solo,,3,confirmar com o cliente,Han Solo,han solo,han solo,Han Solo,True
+3,Palpatine,Ana Souza,3,,Palpatine,palpatine,palpatine,Palpatine,True
+4,C-3PO,,2.0,urgente,C-3PO,c-3po,c-3po,C-3PO,True
+5,Rey Skywalker,time de análise,2,urgente,Rey Skywalker,rey skywalker,rey skywalker,Rey Skywalker,True
+6,  Han Solo  ,,1,confirmar com o cliente,  Han Solo  ,han solo,han solo,Han Solo,True
+7,Leia Organa,,1,confirmar com o cliente,Leia Organa,leia organa,leia organa,Leia Organa,True
+8,R2-D2,,três,revisar depois,R2-D2,r2-d2,r2-d2,R2-D2,True
+9,Chewbacca,Ana Souza,2,urgente,Chewbacca,chewbacca,chewbacca,Chewbacca,True
+10,Obi-Wan Kenobi,João Pereira,1,confirmar com o cliente,Obi-Wan Kenobi,obi-wan kenobi,obi-wan kenobi,Obi-Wan Kenobi,True
+11,Han Sollo,Ana Souza,2,revisar depois,Han Sollo,han sollo,han solo,Han Solo,True
+12,Lando Calrissian,Ana Souza,3,,Lando Calrissian,lando calrissian,lando calrissian,Lando Calrissian,True
+13,Luke Skywalker,Márcia Nuñez,3,,Luke Skywalker,luke skywalker,luke skywalker,Luke Skywalker,True
+14,Chewbaca,Márcia Nuñez,3,revisar depois,Chewbaca,chewbaca,chewbacca,Chewbacca,True
+15,Ahsoka Tano,Márcia Nuñez,3,confirmar com o cliente,Ahsoka Tano,ahsoka tano,ahsoka tano,Ahsoka Tano,True
+16,Yoda,João Pereira,alta,confirmar com o cliente,Yoda,yoda,yoda,Yoda,True
+17,C-3PO,Ana Souza,3,nao é prioridade,C-3PO,c-3po,c-3po,C-3PO,True
+18,Din Djarin,João Pereira,3,nao é prioridade,Din Djarin,din djarin,din djarin,Din Djarin,True
+19,Boba Fett,João Pereira,-1,revisar depois,Boba Fett,boba fett,boba fett,Boba Fett,True
+20,Grogu,time de análise,1,,Grogu,grogu,grogu,Grogu,True
+21,,Márcia Nuñez,1,nao é prioridade,,,,,False
+22,Leia Organna,João Pereira,2,confirmar com o cliente,Leia Organna,leia organna,leia organa,Leia Organa,True
+23,Palpatine,Ana Souza,,revisar depois,Palpatine,palpatine,palpatine,Palpatine,True
+24,LUKE SKYWALKER,Ana Souza,1,confirmar com o cliente,LUKE SKYWALKER,luke skywalker,luke skywalker,Luke Skywalker,True
+25,Han Solo,time de análise,3,confirmar com o cliente,Han Solo,han solo,han solo,Han Solo,True
+26,Dart Vader,Ana Souza,1,revisar depois,Dart Vader,dart vader,darth vader,Darth Vader,True
+27,luke skywalker,,2,confirmar com o cliente,luke skywalker,luke skywalker,luke skywalker,Luke Skywalker,True
+28,R2-D2,João Pereira,1,,R2-D2,r2-d2,r2-d2,R2-D2,True
+29,Yoda,time de análise,1,,Yoda,yoda,yoda,Yoda,True
+30,luke skywalker,João Pereira,2,confirmar com o cliente,luke skywalker,luke skywalker,luke skywalker,Luke Skywalker,True
+31,Luke Skywalker,João Pereira,3,revisar depois,Luke Skywalker,luke skywalker,luke skywalker,Luke Skywalker,True
+32,Darth Vader,,1,nao é prioridade,Darth Vader,darth vader,darth vader,Darth Vader,True
