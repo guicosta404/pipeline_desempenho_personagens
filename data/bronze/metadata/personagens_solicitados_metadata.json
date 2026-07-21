@@ -1,0 +1,8 @@
+{
+    "nome_arquivo": "personagens_solicitados.csv",
+    "fonte": "local",
+    "destino": "data/source/personagens_solicitados.csv",
+    "data_hora": "2026-07-21T05:16:20.422702+00:00",
+    "tamanho_bytes": 1422,
+    "status": "sucesso"
+}

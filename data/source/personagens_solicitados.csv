@@ -1,0 +1,33 @@
+﻿id,nome_personagem,solicitado_por,prioridade,observacao
+1,Boba Fett,Márcia Nuñez,1,confirmar com o cliente
+2,Han Solo,,3,confirmar com o cliente
+3,Palpatine,Ana Souza,3,
+4,C-3PO,,2.0,urgente
+5,Rey Skywalker,time de análise,2,urgente
+6,  Han Solo  ,,1,confirmar com o cliente
+7,Leia Organa,,1,confirmar com o cliente
+8,R2-D2,,três,revisar depois
+9,Chewbacca,Ana Souza,2,urgente
+10,Obi-Wan Kenobi,João Pereira,1,confirmar com o cliente
+11,Han Sollo,Ana Souza,2,revisar depois
+12,Lando Calrissian,Ana Souza,3,
+13,Luke Skywalker,Márcia Nuñez,3,
+14,Chewbaca,Márcia Nuñez,3,revisar depois
+15,Ahsoka Tano,Márcia Nuñez,3,confirmar com o cliente
+16,Yoda,João Pereira,alta,confirmar com o cliente
+17,C-3PO,Ana Souza,3,nao é prioridade
+18,Din Djarin,João Pereira,3,nao é prioridade
+19,Boba Fett,João Pereira,-1,revisar depois
+20,Grogu,time de análise,1,
+21,,Márcia Nuñez,1,nao é prioridade
+22,Leia Organna,João Pereira,2,confirmar com o cliente
+23,Palpatine,Ana Souza,,revisar depois
+24,LUKE SKYWALKER,Ana Souza,1,confirmar com o cliente
+25,Han Solo,time de análise,3,confirmar com o cliente
+26,Dart Vader,Ana Souza,1,revisar depois
+27,luke skywalker,,2,confirmar com o cliente
+28,R2-D2,João Pereira,1,
+29,Yoda,time de análise,1,
+30,luke skywalker,João Pereira,2,confirmar com o cliente
+31,Luke Skywalker,João Pereira,3,revisar depois
+32,Darth Vader,,1,nao é prioridade

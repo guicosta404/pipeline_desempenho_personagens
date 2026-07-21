@@ -1,0 +1,21 @@
+﻿id,nome_personagem,produto,unidades_vendidas,receita_reais,mes_referencia
+1,Luke Skywalker,Poster,cem,1234.56,2026-01
+2,R2-D2,Boneco de Pelúcia,26,900.74,2026-01
+3,Luke Skywalker,Poster,cem,1234.56,2026-01
+4,Lando Calrissian,Caneca,94,4832.85,2026-03
+5,Yoda,Réplica de Sabre de Luz,139,2727.73,2026-01
+6,Han Solo,Boneco de Pelúcia,110,1943.07,2026-01
+7,Han  Solo,Boneco de Pelúcia,,,2026-02
+8,C-3PO,Poster,25,1857.37,2026-02
+9,Leia Organa,Action Figure,126,4581.77,2026-01
+10,Darth Vader,Action Figure,80,"R$ 3.456,00",01/2026
+11,Yoda,Réplica de Sabre de Luz,42,2100.00,
+12,Luke Skywalker,Action Figure,83,1679.59,2026-02
+13,Kylo Ren,Action Figure,15,"675,00",2026-03
+14,Boba Fett,Action Figure,143,1344.74,2026-03
+15,Luke Skywalker,Action Figure,83,1679.59,2026-02
+16,Palpatine,Action Figure,34,4247.82,2026-03
+17,Darth Vader,Réplica de Sabre de Luz,120,3550.79,2026-03
+18,Chewbacca,Action Figure,106,1757.12,2026-01
+19,Obi-Wan Kenobi,Réplica de Sabre de Luz,136,1554.98,2026-02
+20,leia organa,Caneca,-5,"890,50",Janeiro/2026

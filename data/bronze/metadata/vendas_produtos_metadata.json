@@ -1,0 +1,8 @@
+{
+    "nome_arquivo": "vendas_produtos.csv",
+    "fonte": "local",
+    "destino": "data/source/vendas_produtos.csv",
+    "data_hora": "2026-07-21T05:16:20.426996+00:00",
+    "tamanho_bytes": 1058,
+    "status": "sucesso"
+}
